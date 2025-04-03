@@ -35,7 +35,7 @@ This repository provides an automated Python live chat monitor with a terminal-b
 
 ## Features
 
-- **Real-Time Chat Monitoring:** Utilizes a JavaScript MutationObserver to detect and process new chat messages instantly.
+- **Real-Time Chat Monitoring:** Utilizes a JavaScript MutationObserver to detect and process new chat messages.
 - **Interactive Terminal UI:** Built with the curses library, offering a color-coded and user-friendly interface.
 - **Web Automation:** Automates login and chat interactions through Selenium in headless mode.
 - **Thread-Safe Messaging:** Processes messages using a thread-safe queue for reliable performance.
