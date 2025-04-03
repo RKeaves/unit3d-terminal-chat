@@ -171,9 +171,9 @@ Review the terminal log output for further troubleshooting information.
 
 ---
 
-## Acknowledgements
+## Note
 
-This project builds upon various open-source libraries including Selenium, BeautifulSoup, and Colorama. Special thanks to the UNIT3D community for their continuous support and inspiration.
+Feel free to suggest improvements, submit commits, or report issues.
 
 ---
 
