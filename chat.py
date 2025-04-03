@@ -71,7 +71,7 @@ def convert_color(hex_code: str) -> str:
         "#0000ff": "BLUE",
         "#ffff00": "YELLOW",
         "#888888": "GRAY",
-        "#8888": "GRAY"  # Fallback for shorthand.
+        "#8888": "GRAY"  
     }
     return hex_to_color.get(hex_code.lower(), "")
 
