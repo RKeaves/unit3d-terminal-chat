@@ -15,25 +15,19 @@ _Automated Python live chat monitor with terminal UI for UNIT3D._
 ## Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Environment Variables](#environment-variables)
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
-- [Acknowledgements](#acknowledgements)
 - [License](#license)
+- [Contributing](#contributing)
 
 ---
 
 ## Overview
 
 This repository provides an automated Python live chat monitor with a terminal-based UI designed specifically for UNIT3D. It leverages Selenium WebDriver for web automation, BeautifulSoup for HTML parsing, and curses for an interactive command-line interface.
-
----
-
-## Features
 
 - **Real-Time Chat Monitoring:** Utilizes a JavaScript MutationObserver to detect and process new chat messages.
 - **Interactive Terminal UI:** Built with the curses library, offering a color-coded and user-friendly interface.
@@ -148,30 +142,49 @@ The application will automatically:
 
 Type your message into the interface and press **Enter** to send.
 
+
+
 ---
 
 ## Troubleshooting
 
-- **Curses Module Error on Windows:**  
-  If you encounter an error regarding the curses module, install `windows-curses`:
+### Debug Mode for Detailed Logging
 
+For enhanced troubleshooting, run the script in debug mode to enable verbose logging. This mode provides detailed output that can help you pinpoint issues more effectively.
+
+```bash
+python chat.py --debug
+```
+
+> **Tip:** Debug mode is especially useful when diagnosing issues with the UI, WebDriver, or authentication process.
+
+### Common Issues & Solutions
+
+- **Curses Module Error on Windows**  
+  If you encounter an error related to the curses module on Windows, install the `windows-curses` package:
+  
   ```bash
   pip install windows-curses
   ```
-  
-> **Note:** *Debug Mode:* Launch the script with the `--debug` flag to enable verbose logging.
 
-- **WebDriver Issues:**  
-  Verify that Microsoft Edge WebDriver is installed correctly and matches your browser version.
+- **WebDriver Compatibility Issues**  
+  Ensure that Microsoft Edge WebDriver is installed correctly and that its version matches your browser. Incompatibility may lead to automation failures.
 
-- **Login Failures:**  
-  Double-check the credentials and URL specified in the configuration section.
+- **Login Failures**  
+  Verify that the credentials and URL specified in your configuration or `.env` file are correct. Incorrect details can result in login errors.
 
-Review the terminal log output for further troubleshooting information.
+### Additional Tips
+
+- **Check Log Output:**  
+  Always review the terminal log output for error messages or warnings. They provide crucial insights for troubleshooting.
+
+- **Review Environment Variables:**  
+  Double-check that all necessary environment variables are correctly set and securely stored.
+
 
 ---
 
-## Note
+## Contributing
 
 Feel free to suggest improvements, submit commits, or report issues.
 
