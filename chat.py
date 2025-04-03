@@ -29,7 +29,7 @@ from colorama import init as colorama_init, Fore, Style
 # !/* - License: MIT                                                                  !/*
 # !/* - Contributions & Feedback:                                                     !/*
 # !/* - Feel free to suggest improvements, submit commits, or report issues on GitHub !/*
-# !/* - https://github.com/RKeaves/rkeaves.github.io/blob/main/css-theme/cyber.css    !/*
+# !/* - https://github.com/rkeaves/unit3d-terminal-chat/raw/main/chat.py              !/*
 # !/*==================================================================================/*
 
 # Initialize Colorama for logging and non-curses output.
