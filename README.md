@@ -94,17 +94,6 @@ For enhanced security and ease of configuration, store sensitive settings in a `
    pip install python-dotenv
    ```
 
-3. **Update the code** to load these variables by adding the following lines at the beginning of your script:
-
-   ```python
-   from dotenv import load_dotenv
-   load_dotenv()  # Loads the variables from the .env file into os.environ
-
-   TRACKER_URL = os.getenv("TRACKER_URL", "https://privatesilverscreen.cc")
-   TRACKER_USERNAME = os.getenv("TRACKER_USERNAME", "USERNAME HERE")
-   TRACKER_PASSWORD = os.getenv("TRACKER_PASSWORD", "PASSWORD HERE")
-   ```
-
 > **Note:** Your `.env` file contains sensitive data! Remove any sensitive information before sharing it publicly.
 
 ---
