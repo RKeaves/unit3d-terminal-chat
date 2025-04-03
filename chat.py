@@ -18,6 +18,7 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from colorama import init as colorama_init, Fore, Style
+from dotenv import load_dotenv
 
 # /*==================================================================================!/*
 # !/* - Project: unit3d-terminal-chat                                                 !/*
@@ -29,11 +30,32 @@ from colorama import init as colorama_init, Fore, Style
 # !/* - License: MIT                                                                  !/*
 # !/* - Contributions & Feedback:                                                     !/*
 # !/* - Feel free to suggest improvements, submit commits, or report issues on GitHub !/*
-# !/* - https://github.com/rkeaves/unit3d-terminal-chat/raw/main/chat.py              !/*
+# !/* - https://github.com/RKeaves/rkeaves.github.io/blob/main/css-theme/cyber.css    !/*
 # !/*==================================================================================/*
 
 # Initialize Colorama for logging and non-curses output.
 colorama_init(autoreset=True)
+
+# Load environment variables from the .env file
+load_dotenv()
+
+# ---------------------
+# Configuration
+# ---------------------
+TRACKER_URL = os.getenv("TRACKER_URL")
+TRACKER_USERNAME = os.getenv("TRACKER_USERNAME")
+TRACKER_PASSWORD = os.getenv("TRACKER_PASSWORD")
+
+DEBUG_MODE = "--debug" in sys.argv
+LOG_LEVEL = logging.DEBUG if DEBUG_MODE else logging.INFO
+logging.basicConfig(level=LOG_LEVEL,
+                    format="%(asctime)s [%(levelname)s] %(message)s",
+                    datefmt="%H:%M:%S")
+logging.getLogger("urllib3.connectionpool").setLevel(logging.ERROR)
+
+# A thread-safe queue for chat messages.
+# Each entry is a tuple: (display_time, username, content)
+chat_queue = queue.Queue()
 
 # ---------------------
 # BBCode Parsing Helper
@@ -67,23 +89,6 @@ def parse_bbcode(text: str) -> str:
     text = re.sub(r'\[color=([^]]+)\](.*?)\[/color\]', lambda m: m.group(2), text, flags=re.DOTALL)
     return text
 
-# ---------------------
-# Configuration
-# ---------------------
-TRACKER_URL = "https://privatesilverscreen.cc"
-TRACKER_USERNAME = "USERNAME HERE"
-TRACKER_PASSWORD = "PASSWORD HERE"
-
-DEBUG_MODE = "--debug" in sys.argv
-LOG_LEVEL = logging.DEBUG if DEBUG_MODE else logging.INFO
-logging.basicConfig(level=LOG_LEVEL,
-                    format="%(asctime)s [%(levelname)s] %(message)s",
-                    datefmt="%H:%M:%S")
-logging.getLogger("urllib3.connectionpool").setLevel(logging.ERROR)
-
-# A thread-safe queue for chat messages.
-# Each entry is a tuple: (display_time, username, content)
-chat_queue = queue.Queue()
 
 # ---------------------
 # Chat Monitor Class
