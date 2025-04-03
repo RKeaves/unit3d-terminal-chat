@@ -80,18 +80,19 @@ pip install -r requirements.txt
 
 For enhanced security and ease of configuration, store sensitive settings in a `.env` file rather than hardcoding them. This file should be located in the project's root directory.
 
-1. **Create a `.env` file** with the following content:
+1. **Install `python-dotenv`:**
+
+   ```bash
+   pip install python-dotenv
+   ```
+
+
+2. **Create a `.env` file** with the following content:
 
    ```env
    TRACKER_URL=https://your-unit3d-instance.example.com
    TRACKER_USERNAME=YOUR_USERNAME
    TRACKER_PASSWORD=YOUR_PASSWORD
-   ```
-
-2. **Install `python-dotenv`:**
-
-   ```bash
-   pip install python-dotenv
    ```
 
 > **Note:** Your `.env` file contains sensitive data! Remove any sensitive information before sharing it publicly.
@@ -104,14 +105,7 @@ Before running the application, update the configuration parameters either direc
 
 - **TRACKER_URL:** Set this to the URL of your UNIT3D instance.
 - **TRACKER_USERNAME & TRACKER_PASSWORD:** Provide your tracker login credentials.
-- **Debug Mode:** Launch the script with the `--debug` flag to enable verbose logging.
-
-```bash
-TRACKER_URL = "https://your-unit3d-instance.example.com"
-TRACKER_USERNAME = "YOUR_USERNAME"
-TRACKER_PASSWORD = "YOUR_PASSWORD"
-```
-
+  
 > **Note:** Keep these sensitive values secure and avoid exposing them in public.
 
 ---
