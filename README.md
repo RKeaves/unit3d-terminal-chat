@@ -111,7 +111,7 @@ For enhanced security and ease of configuration, store sensitive settings in a `
    TRACKER_PASSWORD = os.getenv("TRACKER_PASSWORD", "PASSWORD HERE")
    ```
 
-> **Note:** Add the `.env` file to your `.gitignore` to prevent sensitive data from being exposed in public repositories.
+> **Note:** Add the `.env` file to your `.gitignore` to prevent sensitive data from being exposed in public.
 
 ---
 
@@ -129,7 +129,7 @@ TRACKER_USERNAME = "YOUR_USERNAME"
 TRACKER_PASSWORD = "YOUR_PASSWORD"
 ```
 
-> **Note:** Keep these sensitive values secure and avoid exposing them in public repositories.
+> **Note:** Keep these sensitive values secure and avoid exposing them in public.
 
 ---
 
